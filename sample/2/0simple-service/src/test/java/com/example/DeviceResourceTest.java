@@ -35,6 +35,7 @@ public class DeviceResourceTest {
     public void testGetDevice() {
         final String testIp = "10.11.58.184";
         final Device device = target.path("device").queryParam("ip", testIp).request().get(Device.class);
+        System.out.println("device.getIp()====>>>"+device.getIp());
         Assert.assertEquals(testIp, device.getIp());
     }
 
@@ -45,6 +46,7 @@ public class DeviceResourceTest {
         device.setStatus(1);
         Entity<Device> entity = Entity.entity(device, MediaType.APPLICATION_XML_TYPE);
         final Device result = target.path("device").request().put(entity, Device.class);
+        System.out.println("result.getStatus()====>>>"+result.getStatus());
         Assert.assertEquals(1, result.getStatus());
     }
 }
