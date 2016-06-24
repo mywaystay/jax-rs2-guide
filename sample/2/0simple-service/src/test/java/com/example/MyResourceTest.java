@@ -30,6 +30,7 @@ public class MyResourceTest {
     @Test
     public void testGetIt() {
         final String responseMsg = target.path("myresource").request().get(String.class);
+        System.out.println("responseMsg====>>>"+responseMsg);
         Assert.assertEquals("Got it!", responseMsg);
     }
 }
