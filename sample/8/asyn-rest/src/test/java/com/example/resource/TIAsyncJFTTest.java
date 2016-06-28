@@ -58,6 +58,7 @@ public class TIAsyncJFTTest extends JerseyTest {
             String result = null;
             try {
                 result = responseFuture.get(AsyncResource.TIMEOUT + 1, TimeUnit.SECONDS);
+                System.out.println("result>>>>>>>>>>>>>>>>>"+result);
             } catch (TimeoutException e) {
                 TIAsyncJFTTest.LOGGER.debug("%%%% " + e.getMessage());
             } finally {
